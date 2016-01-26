@@ -25,7 +25,9 @@ class YiiAPI extends YiiBase {
         $classMapping = array(
             'CAPIException' => dirname(__FILE__).'/CAPIException.php',
             'CAPIApplication' => dirname(__FILE__).'/CAPIApplication.php',
-            'CAPIBase' => dirname(__FILE__).'/CAPIBase.php'
+            'CAPIBase' => dirname(__FILE__).'/CAPIBase.php',
+            'AValidator' => dirname(__FILE__).'/validators/AValidator.php',
+            'ANumberValidator' => dirname(__FILE__).'/validators/ANumberValidator.php',
         );
 
         return $classMapping;
@@ -35,7 +37,6 @@ class YiiAPI extends YiiBase {
         $mapping = self::classMapping();
         if (array_key_exists($class, $mapping))
             include $mapping[$class];
-
     }
 }
 spl_autoload_register(array('YiiAPI', 'autoload'), true, true);

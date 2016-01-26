@@ -9,15 +9,28 @@
  * @since 1.0
  */
 
-class Info extends CAPIBase {
+class Info extends APIBase {
+
     public function rules() {
         return array(
-
+            'limit' => array(
+                'V' => array(
+                    'Number' => array('errno' => 520, 'errmsg' => '请输入 limit')
+                ),
+                'D' => 10
+            )
         );
     }
 
     public function run() {
-        return 'Hello World';
+        $query = MeijuModel::model()->getDbCriteria();
+        $query->limit = 10;
+        $query->offset = 0;
+        $meijuModels = MeijuModel::model()->findAll($query);
+
+        return array(
+            'hello' => 'world'
+        );
     }
 }
  

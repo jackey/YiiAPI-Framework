@@ -9,7 +9,7 @@
  * @since 1.0
  */
 
-define("ROOT", dirname(__FILE__));
+define('ROOT', dirname(__FILE__));
 
 $yii_api = ROOT.'/../../framework/api/CYiiAPI.php';
 $config = ROOT.'/protected/config/main.php';

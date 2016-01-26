@@ -17,9 +17,15 @@ return array(
         'application.models.*',
         'application.components.*'
     ),
+    'displayHandler' => 'json', // or xml
     'defaultAPIPoint' => 'index.welcome',
     'components' => array(
-
+        'db' => array(
+            'class' => 'CDbConnection',
+            'connectionString' => 'mysql:host=localhost;dbname=enjoymj_db',
+            'username' => 'root',
+            'password' => 'admin',
+        )
     ),
     'params' => array(
 
