@@ -91,6 +91,8 @@ abstract class CAPIBase {
 
     protected function checkSign() {
         $keys = $this->application->app_keys;
+        // If there's no config app keys, we ignore the sign .
+        if (empty($keys)) return ;
         $clientAppId = $this->request->getParam('app_id');
         foreach ($keys as $app_key) {
             if ($app_key['app_id'] == $clientAppId)
