@@ -27,6 +27,12 @@ return array(
             'password' => 'admin',
         )
     ),
+    'app_keys' => array(
+        'iOS' => array(
+            'app_id' => '2001503',
+            'app_secret' => 'YES',
+        )
+    ),
     'params' => array(
 
     )

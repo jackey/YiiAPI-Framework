@@ -17,7 +17,8 @@ class CAPIApplication extends CApplication {
     const STATUS_BASE_PATH_NOT_EXIST = 503;
 
     public $defaultAPIPoint = "";
-    public $displayHandler = 'json'; // 数据显示模式: json / xml
+    public $displayHandler = 'json'; // Return data format: json / xml
+    public $app_keys = array();// app_id / app_secret configuration
 
     public function processRequest() {
         global $version;

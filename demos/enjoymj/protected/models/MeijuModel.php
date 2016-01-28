@@ -22,6 +22,18 @@
     public static function model($class = __CLASS__) {
         return parent::model($class);
     }
+
+    public function loadMeijuWithCat($cats, $page = 1, $limit = 50 ) {
+        $query = $this->getDbCriteria();
+        if (!is_array($cats)) $cats = array($cats);
+        $query->addInCondition('Fcategory', $cats);
+        $query->addInCondition('Fcategory2', $cats);
+
+        $query->limit = $limit;
+        $query->offset = ($page - 1) * $page;
+
+        return $this->findAll($query);
+    }
  }
 
  
